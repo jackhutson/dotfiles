@@ -1,0 +1,9 @@
+# .chezmoidata.toml - Static shared configuration
+# NOTE: This file cannot use templates
+
+[git]
+    name = "Jack Hutson"
+    defaultBranch = "main"
+
+[editor]
+    default = "nvim"

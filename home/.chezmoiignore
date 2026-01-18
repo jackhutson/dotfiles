@@ -1,0 +1,31 @@
+{{/* .chezmoiignore - Conditional file exclusions */}}
+
+# Repository metadata - never managed
+README.md
+LICENSE
+.git/
+.planning/
+
+# macOS-only files - ignore on non-macOS
+{{ if ne .chezmoi.os "darwin" }}
+Library/
+.config/karabiner/
+.config/kanata/
+Brewfile
+{{ end }}
+
+# Linux-only files - ignore on non-Linux
+{{ if ne .chezmoi.os "linux" }}
+.config/systemd/
+.config/pacman/
+{{ end }}
+
+# Work-only files - ignore on personal devices
+{{ if ne .deviceType "work" }}
+.config/work-tools/
+{{ end }}
+
+# Personal-only files - ignore on work devices
+{{ if ne .deviceType "personal" }}
+.config/personal-apps/
+{{ end }}
