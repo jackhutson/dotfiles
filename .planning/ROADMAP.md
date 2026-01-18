@@ -43,10 +43,11 @@ Plans:
   2. SSH connections work using 1Password SSH agent (no local key files)
   3. Git commits are signed via 1Password
   4. Running `chezmoi diff` shows no secrets in plain text
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: TBD
+- [ ] 02-01-PLAN.md — SSH and Git config with 1Password integration
+- [ ] 02-02-PLAN.md — Verification script and end-to-end confirmation
 
 ### Phase 3: Core Configs
 **Goal**: Shell and Git configs that provide the daily driver dev environment
@@ -99,7 +100,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 1/1 | Complete | 2026-01-18 |
-| 2. Secrets | 0/TBD | Not started | - |
+| 2. Secrets | 0/2 | Not started | - |
 | 3. Core Configs | 0/TBD | Not started | - |
 | 4. App Ecosystem | 0/TBD | Not started | - |
 | 5. Bootstrap | 0/TBD | Not started | - |
