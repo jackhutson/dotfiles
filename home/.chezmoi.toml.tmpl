@@ -1,13 +1,11 @@
 {{/* .chezmoi.toml.tmpl - Device configuration with prompts */}}
 
-{{/* Device type selection - required, no default */}}
-{{- $deviceTypeChoices := list "work" "personal" -}}
-{{- $deviceType := promptChoiceOnce . "deviceType" "Device type" $deviceTypeChoices -}}
-
-{{/* Validate device type was selected */}}
-{{- if not $deviceType -}}
-{{-   writeToStdout "ERROR: Device type is required. Run 'chezmoi init' again.\n" -}}
-{{-   exit 1 -}}
+{{/* Device type selection - Y for work, anything else for personal */}}
+{{- $response := promptStringOnce . "isWork" "Is this a work computer? (Y/n)" -}}
+{{- $isWork := or (eq $response "Y") (eq $response "y") (eq $response "yes") (eq $response "Yes") -}}
+{{- $deviceType := "personal" -}}
+{{- if $isWork -}}
+{{-   $deviceType = "work" -}}
 {{- end -}}
 
 {{/* Derive email from device type - no separate prompt */}}
