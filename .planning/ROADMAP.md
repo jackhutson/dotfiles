@@ -12,7 +12,7 @@ This roadmap transforms a collection of existing configs into a Chezmoi-managed 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Core chezmoi infrastructure with device detection
+- [x] **Phase 1: Foundation** - Core chezmoi infrastructure with device detection
 - [ ] **Phase 2: Secrets** - 1Password integration for all sensitive data
 - [ ] **Phase 3: Core Configs** - Shell and Git configuration with templating
 - [ ] **Phase 4: App Ecosystem** - Application configs, CLI tools, and package management
@@ -32,7 +32,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 1 plan
 
 Plans:
-- [ ] 01-01-PLAN.md — Create chezmoi infrastructure with device type prompting
+- [x] 01-01-PLAN.md — Create chezmoi infrastructure with device type prompting
 
 ### Phase 2: Secrets
 **Goal**: 1Password integration that provides secrets to all templated configs
@@ -98,7 +98,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/1 | Planned | - |
+| 1. Foundation | 1/1 | Complete | 2026-01-18 |
 | 2. Secrets | 0/TBD | Not started | - |
 | 3. Core Configs | 0/TBD | Not started | - |
 | 4. App Ecosystem | 0/TBD | Not started | - |

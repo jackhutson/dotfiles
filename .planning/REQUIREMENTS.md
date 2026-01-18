@@ -9,10 +9,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Core Infrastructure
 
-- [ ] **INFRA-01**: `.chezmoi.toml.tmpl` prompts for hostname, email, and device type on init
-- [ ] **INFRA-02**: `.chezmoiignore` conditionally ignores files based on OS and device type
-- [ ] **INFRA-03**: `.chezmoiroot` separates source state from repository metadata
-- [ ] **INFRA-04**: `.chezmoidata.toml` contains static shared configuration data
+- [x] **INFRA-01**: `.chezmoi.toml.tmpl` prompts for hostname, email, and device type on init
+- [x] **INFRA-02**: `.chezmoiignore` conditionally ignores files based on OS and device type
+- [x] **INFRA-03**: `.chezmoiroot` separates source state from repository metadata
+- [x] **INFRA-04**: `.chezmoidata.toml` contains static shared configuration data
 
 ### Secrets Management
 
@@ -104,10 +104,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1 | Pending |
-| INFRA-02 | Phase 1 | Pending |
-| INFRA-03 | Phase 1 | Pending |
-| INFRA-04 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete |
+| INFRA-02 | Phase 1 | Complete |
+| INFRA-03 | Phase 1 | Complete |
+| INFRA-04 | Phase 1 | Complete |
 | SECR-01 | Phase 2 | Pending |
 | SECR-02 | Phase 2 | Pending |
 | SECR-03 | Phase 2 | Pending |
