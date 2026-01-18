@@ -25,14 +25,14 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Depends on**: Nothing (first phase)
 **Requirements**: INFRA-01, INFRA-02, INFRA-03, INFRA-04
 **Success Criteria** (what must be TRUE):
-  1. Running `chezmoi init` prompts for hostname, email, and device type (work/personal/minimal)
+  1. Running `chezmoi init` prompts for device type (work/personal)
   2. Files are conditionally ignored based on OS (darwin/linux) and device type
   3. Source state is cleanly separated from repository metadata via `.chezmoiroot`
   4. `add.secrets = "error"` is configured to prevent accidental secret commits
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 01-01: TBD
+- [ ] 01-01-PLAN.md — Create chezmoi infrastructure with device type prompting
 
 ### Phase 2: Secrets
 **Goal**: 1Password integration that provides secrets to all templated configs
@@ -98,7 +98,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/1 | Planned | - |
 | 2. Secrets | 0/TBD | Not started | - |
 | 3. Core Configs | 0/TBD | Not started | - |
 | 4. App Ecosystem | 0/TBD | Not started | - |
