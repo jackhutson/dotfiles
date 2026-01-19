@@ -1,0 +1,17 @@
+========================================
+  Dotfiles Bootstrap Complete!
+========================================
+
+Configured:
+  - zsh + oh-my-zsh + starship prompt
+  - git with 1Password commit signing
+  - nvim with LazyVim
+  - CLI tools (bat, fzf, rg, eza, zoxide, lazygit)
+  - Package managers (Homebrew on macOS / pacman on Arch)
+
+Next steps:
+  - Open a new terminal to load shell config
+  - Run 'nvim' to let LazyVim install plugins
+  - Run 'chezmoi update' to pull future changes
+
+Happy coding!
