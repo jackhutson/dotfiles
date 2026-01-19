@@ -2,6 +2,9 @@
 # Environment Variables
 # ============================================================================
 
+# Homebrew GitHub API token (for private taps)
+export HOMEBREW_GITHUB_API_TOKEN="{{ onepasswordRead "op://Private/HOMEBREW_CK/Section_snxl2s7hudnpyy3wofgw4r6igi/token" }}"
+
 # Zsh file locations (reduce home directory clutter)
 export HISTFILE="$HOME/.cache/zsh/history"
 export ZSH_COMPDUMP="$HOME/.cache/zsh/zcompdump-$ZSH_VERSION"
