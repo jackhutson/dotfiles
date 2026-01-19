@@ -75,10 +75,13 @@ Plans:
   3. Kanata config is present on macOS devices (not auto-installed)
   4. Running `chezmoi apply` installs all packages via Brewfile (macOS) or pacman script (Arch)
   5. CLI tools (bat, eza, fd, fzf, jq, lazygit, rg, zoxide) have correct configs
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 04-01: TBD
+- [ ] 04-01-PLAN.md — Create package management infrastructure (Brewfile + pacman scripts)
+- [ ] 04-02-PLAN.md — Migrate application configs (nvim, ghostty, htop, gh, kanata)
+- [ ] 04-03-PLAN.md — Configure CLI tools (bat, fd, ripgrep, lazygit, zshrc env vars)
+- [ ] 04-04-PLAN.md — Verification and human approval
 
 ### Phase 5: Bootstrap
 **Goal**: Single-command setup for fresh machines
@@ -104,7 +107,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 1. Foundation | 1/1 | Complete | 2026-01-18 |
 | 2. Secrets | 2/2 | Complete | 2026-01-19 |
 | 3. Core Configs | 3/3 | Complete | 2026-01-19 |
-| 4. App Ecosystem | 0/TBD | Not started | - |
+| 4. App Ecosystem | 0/4 | Planned | - |
 | 5. Bootstrap | 0/TBD | Not started | - |
 
 ---
