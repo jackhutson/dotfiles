@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-18)
 
 **Core value:** Fresh machine -> productive dev environment in minutes, not hours.
-**Current focus:** Phase 4 - App Ecosystem (Plan 1 complete)
+**Current focus:** Phase 5 - Finalize (Phase 4 complete)
 
 ## Current Position
 
-Phase: 4 of 5 (App Ecosystem)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-01-19 -- Completed 04-01-PLAN.md
+Phase: 4 of 5 (App Ecosystem) - COMPLETE
+Plan: 2 of 2 in current phase
+Status: Phase complete
+Last activity: 2026-01-19 -- Completed 04-02-PLAN.md
 
-Progress: [███████---] 70%
+Progress: [████████--] 80%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
+- Total plans completed: 8
 - Average duration: ~2.4 min
-- Total execution time: 7 sessions
+- Total execution time: 8 sessions
 
 **By Phase:**
 
@@ -30,10 +30,10 @@ Progress: [███████---] 70%
 | 1. Foundation | 1 | 1 session | 1 session |
 | 2. Secrets | 2 | 5 min | 2.5 min |
 | 3. Core Configs | 3 | 8 min | 2.7 min |
-| 4. App Ecosystem | 1 | 2 min | 2 min |
+| 4. App Ecosystem | 2 | 4 min | 2 min |
 
 **Recent Trend:**
-- Last 7 plans: 7 complete
+- Last 8 plans: 8 complete
 - Trend: Good velocity
 
 *Updated after each plan completion*
@@ -66,6 +66,9 @@ Recent decisions affecting current work:
 - [Phase 4]: nvm is macOS-only via Homebrew
 - [Phase 4]: brew bundle via heredoc stdin (no Brewfile needed)
 - [Phase 4]: yay conditional (graceful degradation if not installed)
+- [Phase 4]: nvim lazy-lock.json excluded (auto-generated)
+- [Phase 4]: gh hosts.yml excluded (contains OAuth tokens)
+- [Phase 4]: lazygit paths pre-added to .chezmoiignore
 
 ### Pending Todos
 
@@ -78,7 +81,7 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-19
-Stopped at: Completed 04-01-PLAN.md
+Stopped at: Completed 04-02-PLAN.md (Phase 4 complete)
 Resume file: None
 
 ## Phase Completion Summary
@@ -122,7 +125,7 @@ Resume file: None
 - Conditional .chezmoiignore with {{ if not .isWork }}
 - private_dot_ prefix for restricted permission directories
 
-### Phase 4: App Ecosystem - IN PROGRESS
+### Phase 4: App Ecosystem - COMPLETE
 
 **Plan 1 Delivered:**
 - packages.yaml with darwin (taps/brews/casks) and linux (pacman/aur) sections
@@ -130,12 +133,23 @@ Resume file: None
 - run_onchange_before_linux-install-packages.sh.tmpl for Arch Linux pacman/yay
 - sha256sum hash pattern for change detection
 
+**Plan 2 Delivered:**
+- nvim/LazyVim configuration (22 files including 13 custom plugins)
+- ghostty terminal configuration
+- htop process viewer settings
+- gh CLI config (excluding hosts.yml secrets)
+- kanata keyboard remapping (macOS only)
+- Updated .chezmoiignore with app-specific exclusions
+
 **Patterns Established:**
 - packages.yaml as single source of truth for all packages
 - run_onchange_before_ prefix for package installation before config apply
 - sha256sum hash triggers re-run on content change
 - Platform-conditional scripts with Arch Linux pacman detection
+- Static config files for applications (no .tmpl needed)
+- Secrets exclusion pattern (hosts.yml never managed)
 
-**Ready for Plan 2:**
+**Ready for Phase 5:**
+- All application configs managed
 - Package infrastructure complete
-- Can add app configs (Neovim, Ghostty, etc.)
+- Can proceed to finalize and testing
