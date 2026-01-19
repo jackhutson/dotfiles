@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Secrets** - 1Password integration for all sensitive data
 - [x] **Phase 3: Core Configs** - Shell and Git configuration with templating
 - [x] **Phase 4: App Ecosystem** - Application configs, CLI tools, and package management
-- [ ] **Phase 5: Bootstrap** - Single-command fresh machine setup
+- [x] **Phase 5: Bootstrap** - Single-command fresh machine setup
 
 ## Phase Details
 
@@ -95,7 +95,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 05-01-PLAN.md — Create bootstrap script and summary file
+- [x] 05-01-PLAN.md — Create bootstrap script and summary file
 
 ## Progress
 
@@ -108,8 +108,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 2. Secrets | 2/2 | Complete | 2026-01-19 |
 | 3. Core Configs | 3/3 | Complete | 2026-01-19 |
 | 4. App Ecosystem | 4/4 | Complete | 2026-01-18 |
-| 5. Bootstrap | 0/1 | Not started | - |
+| 5. Bootstrap | 1/1 | Complete | 2026-01-19 |
 
 ---
 *Roadmap created: 2026-01-18*
-*Last updated: 2026-01-18*
+*Last updated: 2026-01-19*

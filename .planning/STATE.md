@@ -9,19 +9,19 @@ See: .planning/PROJECT.md (updated 2026-01-18)
 
 ## Current Position
 
-Phase: 4 of 5 (App Ecosystem) - COMPLETE
-Plan: 4 of 4 in current phase
-Status: Phase complete
-Last activity: 2026-01-18 -- Completed Phase 4
+Phase: 5 of 5 (Bootstrap) - COMPLETE
+Plan: 1 of 1 in current phase
+Status: Milestone complete
+Last activity: 2026-01-19 -- Completed 05-01-PLAN.md
 
-Progress: [████████░░] 80%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
-- Average duration: ~2.3 min
-- Total execution time: 9 sessions
+- Total plans completed: 11
+- Average duration: ~2.1 min
+- Total execution time: 10 sessions
 
 **By Phase:**
 
@@ -31,10 +31,11 @@ Progress: [████████░░] 80%
 | 2. Secrets | 2 | 5 min | 2.5 min |
 | 3. Core Configs | 3 | 8 min | 2.7 min |
 | 4. App Ecosystem | 4 | 8 min | 2.0 min |
+| 5. Bootstrap | 1 | 1 min | 1.0 min |
 
 **Recent Trend:**
-- Last 10 plans: 10 complete
-- Trend: Good velocity
+- Last 11 plans: 11 complete
+- Trend: Excellent velocity
 
 *Updated after each plan completion*
 
@@ -69,6 +70,9 @@ Recent decisions affecting current work:
 - [Phase 4]: nvim lazy-lock.json excluded (auto-generated)
 - [Phase 4]: gh hosts.yml excluded (contains OAuth tokens)
 - [Phase 4]: lazygit paths pre-added to .chezmoiignore
+- [Phase 5]: Use get.chezmoi.io official installer (cross-platform)
+- [Phase 5]: Install chezmoi to ~/.local/bin (PATH-independent)
+- [Phase 5]: Verify op --version (not just existence) for early failure
 
 ### Pending Todos
 
@@ -80,8 +84,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-18
-Stopped at: Completed Phase 4 (App Ecosystem)
+Last session: 2026-01-19
+Stopped at: Completed 05-01-PLAN.md (Milestone complete)
 Resume file: None
 
 ## Phase Completion Summary
@@ -167,3 +171,29 @@ Resume file: None
 - Complete dev environment managed by chezmoi
 - Package installation automated
 - All configs portable across devices
+
+### Phase 5: Bootstrap - COMPLETE
+
+**Plan 1 Delivered:**
+- bootstrap.sh single-command entry point
+- OS detection (macOS/Linux via uname -s)
+- Prerequisite verification (git, curl, op with working check)
+- Official chezmoi installer (get.chezmoi.io)
+- SUMMARY.txt post-bootstrap guidance
+
+**Patterns Established:**
+- 4-stage progress output with emojis
+- Strict bash mode (set -euo pipefail)
+- Install to ~/.local/bin for PATH-independent operation
+- dirname $0 for script-relative file paths
+
+---
+
+## MILESTONE COMPLETE
+
+All 5 phases finished. Dotfiles repository is fully operational:
+- Fresh machine bootstrap via `curl | sh`
+- 1Password secret integration
+- Shell/Git configuration with device conditionals
+- Complete application ecosystem
+- Automated package installation
