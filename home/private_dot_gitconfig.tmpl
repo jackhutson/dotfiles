@@ -5,7 +5,7 @@
     email = {{ .email | quote }}
     # SSH public key for signing - retrieved from 1Password
     # NOTE: Update the op:// path to match your actual 1Password item
-    signingkey = {{ onepasswordRead "op://Personal/GitHub SSH Key/public key" | quote }}
+    signingkey = {{ onepasswordRead "op://Private/Git Commit Signing/public key" | quote }}
 
 [init]
     defaultBranch = {{ .git.defaultBranch | quote }}
