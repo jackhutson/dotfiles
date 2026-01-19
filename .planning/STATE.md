@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-18)
 
 **Core value:** Fresh machine -> productive dev environment in minutes, not hours.
-**Current focus:** Phase 3 - Core Configs
+**Current focus:** Phase 3 - Core Configs (COMPLETE)
 
 ## Current Position
 
 Phase: 3 of 5 (Core Configs)
-Plan: 2 of TBD in current phase
-Status: In progress
-Last activity: 2026-01-19 -- Completed 03-02-PLAN.md
+Plan: 3 of 3 in current phase - COMPLETE
+Status: Phase complete
+Last activity: 2026-01-19 -- Completed 03-03-PLAN.md
 
-Progress: [█████-----] 50%
+Progress: [██████----] 60%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
+- Total plans completed: 6
 - Average duration: ~2.5 min
-- Total execution time: 5 sessions
+- Total execution time: 6 sessions
 
 **By Phase:**
 
@@ -29,10 +29,10 @@ Progress: [█████-----] 50%
 |-------|-------|-------|----------|
 | 1. Foundation | 1 | 1 session | 1 session |
 | 2. Secrets | 2 | 5 min | 2.5 min |
-| 3. Core Configs | 2 | 5 min | 2.5 min |
+| 3. Core Configs | 3 | 8 min | 2.7 min |
 
 **Recent Trend:**
-- Last 5 plans: 5 complete
+- Last 6 plans: 6 complete
 - Trend: Good velocity
 
 *Updated after each plan completion*
@@ -59,6 +59,8 @@ Recent decisions affecting current work:
 - [Phase 3]: Removed CONTEXT7_API_KEY from zshrc (security)
 - [Phase 3]: Use .tmpl for zprofile (platform-conditional), static for alias files
 - [Phase 3]: Modular alias files by category (git, tools, go, pnpm)
+- [Phase 3]: private_dot_ prefix for 700 permissions on sensitive directories
+- [Phase 3]: Conditional .chezmoiignore with {{ if not .isWork }} for device-specific files
 
 ### Pending Todos
 
@@ -71,7 +73,7 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-19
-Stopped at: Completed 03-02-PLAN.md
+Stopped at: Completed 03-03-PLAN.md (Phase 3 complete)
 Resume file: None
 
 ## Phase Completion Summary
@@ -89,7 +91,7 @@ Resume file: None
 - Platform-conditional templates working (darwin/linux)
 - Verification confirms configuration on each apply
 
-### Phase 3: Core Configs - IN PROGRESS
+### Phase 3: Core Configs - COMPLETE
 
 **Plan 1 Delivered:**
 - .chezmoiexternal.toml for oh-my-zsh and 4 custom plugins
@@ -101,8 +103,21 @@ Resume file: None
 - starship.toml with catppuccin_mocha theme
 - Modular alias files: aliases-git.zsh, aliases-tools.zsh, aliases-go.zsh, aliases-pnpm.zsh
 
+**Plan 3 Delivered:**
+- Updated .chezmoiignore with oh-my-zsh cache exclusions
+- Conditional exclusion for work-only files ({{ if not .isWork }})
+- _it completion file for work devices only
+- Human verification confirmed all shell features working
+
 **Patterns Established:**
 - .chezmoiexternal.toml with archive type, refreshPeriod for managed externals
 - Conditional template sections with {{ if .isWork }}
 - Platform conditionals: {{- if eq .chezmoi.os "darwin" }}
 - Modular alias files by category (sourced from .zshrc)
+- Conditional .chezmoiignore with {{ if not .isWork }}
+- private_dot_ prefix for restricted permission directories
+
+**Ready for Phase 4:**
+- Shell fully configured (oh-my-zsh + starship + aliases)
+- Work/personal device differentiation working
+- Next phase can add git configs, additional tools, or app configs
