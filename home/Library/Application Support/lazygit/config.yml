@@ -1,0 +1,17 @@
+# lazygit configuration
+gui:
+  showIcons: true
+  theme:
+    activeBorderColor:
+      - green
+      - bold
+    selectedLineBgColor:
+      - reverse
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+  autoFetch: true
+os:
+  editCommand: 'nvim'
+  editCommandTemplate: '{{editor}} {{filename}}'
