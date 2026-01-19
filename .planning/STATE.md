@@ -10,28 +10,29 @@ See: .planning/PROJECT.md (updated 2026-01-18)
 ## Current Position
 
 Phase: 2 of 5 (Secrets)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-01-18 -- Phase 1 complete
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-01-19 -- Completed 02-01-PLAN.md
 
-Progress: [██--------] 20%
+Progress: [███-------] 30%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: ~1 session
-- Total execution time: 1 session
+- Total plans completed: 2
+- Average duration: ~3 min
+- Total execution time: 2 sessions
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1. Foundation | 1 | 1 session | 1 session |
+| 2. Secrets | 1 | 3 min | 3 min |
 
 **Recent Trend:**
-- Last 5 plans: 1 complete
-- Trend: Starting
+- Last 5 plans: 2 complete
+- Trend: Good velocity
 
 *Updated after each plan completion*
 
@@ -47,6 +48,9 @@ Recent decisions affecting current work:
 - [Init]: Minimal Proxmox setup (VMs are ephemeral)
 - [Init]: Kanata manual install (opt-in reduces complexity)
 - [Phase 1]: Changed prompt from fuzzy menu to explicit Y/n for clearer UX
+- [Phase 2]: Use ~/.1password/agent.sock (works on both macOS and Linux)
+- [Phase 2]: No fallback to system SSH agent (IdentitiesOnly yes)
+- [Phase 2]: Global commit signing with SSH key format
 
 ### Pending Todos
 
@@ -54,10 +58,10 @@ None yet.
 
 ### Blockers/Concerns
 
-None yet.
+- User may need to adjust 1Password item path `op://Personal/GitHub SSH Key/public key` if their vault/item structure differs
 
 ## Session Continuity
 
-Last session: 2026-01-18
-Stopped at: Phase 1 complete, ready to plan Phase 2
+Last session: 2026-01-19
+Stopped at: Completed 02-01-PLAN.md
 Resume file: None
