@@ -13,7 +13,7 @@ This roadmap transforms a collection of existing configs into a Chezmoi-managed 
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Core chezmoi infrastructure with device detection
-- [ ] **Phase 2: Secrets** - 1Password integration for all sensitive data
+- [x] **Phase 2: Secrets** - 1Password integration for all sensitive data
 - [ ] **Phase 3: Core Configs** - Shell and Git configuration with templating
 - [ ] **Phase 4: App Ecosystem** - Application configs, CLI tools, and package management
 - [ ] **Phase 5: Bootstrap** - Single-command fresh machine setup
@@ -46,8 +46,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — SSH and Git config with 1Password integration
-- [ ] 02-02-PLAN.md — Verification script and end-to-end confirmation
+- [x] 02-01-PLAN.md — SSH and Git config with 1Password integration
+- [x] 02-02-PLAN.md — Verification script and end-to-end confirmation
 
 ### Phase 3: Core Configs
 **Goal**: Shell and Git configs that provide the daily driver dev environment
@@ -100,11 +100,11 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 1/1 | Complete | 2026-01-18 |
-| 2. Secrets | 0/2 | Not started | - |
+| 2. Secrets | 2/2 | Complete | 2026-01-19 |
 | 3. Core Configs | 0/TBD | Not started | - |
 | 4. App Ecosystem | 0/TBD | Not started | - |
 | 5. Bootstrap | 0/TBD | Not started | - |
 
 ---
 *Roadmap created: 2026-01-18*
-*Last updated: 2026-01-18*
+*Last updated: 2026-01-19*
