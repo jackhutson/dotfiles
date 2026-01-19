@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-01-18)
 ## Current Position
 
 Phase: 3 of 5 (Core Configs)
-Plan: 1 of TBD in current phase
+Plan: 2 of TBD in current phase
 Status: In progress
-Last activity: 2026-01-19 -- Completed 03-01-PLAN.md
+Last activity: 2026-01-19 -- Completed 03-02-PLAN.md
 
 Progress: [█████-----] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
+- Total plans completed: 5
 - Average duration: ~2.5 min
-- Total execution time: 4 sessions
+- Total execution time: 5 sessions
 
 **By Phase:**
 
@@ -29,10 +29,10 @@ Progress: [█████-----] 50%
 |-------|-------|-------|----------|
 | 1. Foundation | 1 | 1 session | 1 session |
 | 2. Secrets | 2 | 5 min | 2.5 min |
-| 3. Core Configs | 1 | 3 min | 3 min |
+| 3. Core Configs | 2 | 5 min | 2.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 4 complete
+- Last 5 plans: 5 complete
 - Trend: Good velocity
 
 *Updated after each plan completion*
@@ -57,6 +57,8 @@ Recent decisions affecting current work:
 - [Phase 3]: Archive type (not git-repo) for oh-my-zsh to avoid auto-update drift
 - [Phase 3]: DISABLE_AUTO_UPDATE=true so chezmoi manages oh-my-zsh updates
 - [Phase 3]: Removed CONTEXT7_API_KEY from zshrc (security)
+- [Phase 3]: Use .tmpl for zprofile (platform-conditional), static for alias files
+- [Phase 3]: Modular alias files by category (git, tools, go, pnpm)
 
 ### Pending Todos
 
@@ -69,7 +71,7 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-19
-Stopped at: Completed 03-01-PLAN.md
+Stopped at: Completed 03-02-PLAN.md
 Resume file: None
 
 ## Phase Completion Summary
@@ -94,6 +96,13 @@ Resume file: None
 - dot_zshrc.tmpl with work/personal conditionals
 - {{ if .isWork }} pattern established for device-specific content
 
+**Plan 2 Delivered:**
+- dot_zprofile.tmpl with macOS-conditional Homebrew shellenv
+- starship.toml with catppuccin_mocha theme
+- Modular alias files: aliases-git.zsh, aliases-tools.zsh, aliases-go.zsh, aliases-pnpm.zsh
+
 **Patterns Established:**
 - .chezmoiexternal.toml with archive type, refreshPeriod for managed externals
 - Conditional template sections with {{ if .isWork }}
+- Platform conditionals: {{- if eq .chezmoi.os "darwin" }}
+- Modular alias files by category (sourced from .zshrc)
