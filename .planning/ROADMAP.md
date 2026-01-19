@@ -92,10 +92,10 @@ Plans:
   2. Bootstrap correctly detects macOS vs Linux and runs appropriate setup
   3. Bootstrap installs chezmoi if not present
   4. After bootstrap completes, machine is fully configured (ready to dev)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 05-01: TBD
+- [ ] 05-01-PLAN.md — Create bootstrap script and summary file
 
 ## Progress
 
@@ -108,7 +108,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 2. Secrets | 2/2 | Complete | 2026-01-19 |
 | 3. Core Configs | 3/3 | Complete | 2026-01-19 |
 | 4. App Ecosystem | 4/4 | Complete | 2026-01-18 |
-| 5. Bootstrap | 0/TBD | Not started | - |
+| 5. Bootstrap | 0/1 | Not started | - |
 
 ---
 *Roadmap created: 2026-01-18*
