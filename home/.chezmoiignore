@@ -6,6 +6,12 @@ LICENSE
 .git/
 .planning/
 
+# Oh-my-zsh runtime artifacts - never managed
+.oh-my-zsh/cache/
+.oh-my-zsh/.git/
+.oh-my-zsh/log/
+.cache/zsh/
+
 # macOS-only files - ignore on non-macOS
 {{ if ne .chezmoi.os "darwin" }}
 Library/
@@ -21,8 +27,9 @@ Brewfile
 {{ end }}
 
 # Work-only files - ignore on personal devices
-{{ if ne .deviceType "work" }}
+{{ if not .isWork }}
 .config/work-tools/
+.oh-my-zsh/custom/completions/_it
 {{ end }}
 
 # Personal-only files - ignore on work devices
