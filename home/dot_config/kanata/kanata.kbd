@@ -1,0 +1,65 @@
+;; Kanata config for MacBook built-in keyboard
+;; CAGS home row mods + nav layer on left Cmd
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+;; Define timing for tap-hold (150ms for fast/aggressive)
+(defvar
+  tap-time 150
+  hold-time 150
+)
+
+;; Source: keys we want to remap
+(defsrc
+  grv     q    w    e    r    t    y
+  tab     caps a    s    d    f    g    h    j    k    l    ;
+  lmet    z    x    c    v    b    n    m    ,    .    /
+          spc  rmet
+)
+
+;; Aliases for home row mods (CAGS order)
+(defalias
+  ;; Left hand home row: Ctrl, Alt, Gui, Shift
+  a-ctl (tap-hold $tap-time $hold-time a lctl)
+  s-alt (tap-hold $tap-time $hold-time s lalt)
+  d-gui (tap-hold $tap-time $hold-time d lmet)
+  f-sft (tap-hold $tap-time $hold-time f lsft)
+
+  ;; Right hand home row: Shift, Gui, Alt, Ctrl (mirrored)
+  j-sft (tap-hold $tap-time $hold-time j rsft)
+  k-gui (tap-hold $tap-time $hold-time k rmet)
+  l-alt (tap-hold $tap-time $hold-time l ralt)
+  ;-ctl (tap-hold $tap-time $hold-time ; rctl)
+
+  ;; Left Cmd: tap=Esc, hold=nav layer
+  lmet-nav (tap-hold $tap-time $hold-time esc (layer-toggle nav))
+
+  ;; Space: tap=space, hold=symbol layer
+  spc (tap-hold $tap-time $hold-time spc (layer-toggle symbol))
+)
+
+;; Base layer
+(deflayer base
+  grv     q       w       e       r       t    y
+  tab     lmet    @a-ctl  @s-alt  @d-gui  @f-sft  g    h       @j-sft  @k-gui  @l-alt  @;-ctl
+  @lmet-nav  z       x       c       v    b    n       m       ,       .       /
+          @spc    bspc
+)
+
+;; Navigation layer (activated by holding left Cmd)
+(deflayer nav
+  _       _       _       _       _       _    _
+  _       _       _       _       _       _       _    left    down    up      right   _
+  _       _       _       _       _       _    home    pgup    pgdn    end     _
+          _       _
+)
+
+;; Symbol layer (activated by holding space)
+(deflayer symbol
+  S-1     S-[     [       ]       S-]     S-0  S-7
+  S-9     _       S-6     =       S--     S-4     S-8  S-grv   rsft    rctl    ralt    rmet
+  _       S-,     S-\     -       S-.     /    S-=     S-5     _       _       _
+          _       _
+)
