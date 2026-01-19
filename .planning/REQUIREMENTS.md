@@ -16,10 +16,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Secrets Management
 
-- [ ] **SECR-01**: 1Password CLI integrated via `onepasswordRead` template function
-- [ ] **SECR-02**: No secrets committed to repository (enforced via `.gitignore` and review)
-- [ ] **SECR-03**: SSH keys managed through 1Password SSH agent
-- [ ] **SECR-04**: Git commit signing via 1Password
+- [x] **SECR-01**: 1Password CLI integrated via `onepasswordRead` template function
+- [x] **SECR-02**: No secrets committed to repository (enforced via `.gitignore` and review)
+- [x] **SECR-03**: SSH keys managed through 1Password SSH agent
+- [x] **SECR-04**: Git commit signing via 1Password
 
 ### Shell Configuration
 
@@ -108,10 +108,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INFRA-02 | Phase 1 | Complete |
 | INFRA-03 | Phase 1 | Complete |
 | INFRA-04 | Phase 1 | Complete |
-| SECR-01 | Phase 2 | Pending |
-| SECR-02 | Phase 2 | Pending |
-| SECR-03 | Phase 2 | Pending |
-| SECR-04 | Phase 2 | Pending |
+| SECR-01 | Phase 2 | Complete |
+| SECR-02 | Phase 2 | Complete |
+| SECR-03 | Phase 2 | Complete |
+| SECR-04 | Phase 2 | Complete |
 | SHELL-01 | Phase 3 | Pending |
 | SHELL-02 | Phase 3 | Pending |
 | SHELL-03 | Phase 3 | Pending |

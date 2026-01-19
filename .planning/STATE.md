@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-01-18)
 
 **Core value:** Fresh machine -> productive dev environment in minutes, not hours.
-**Current focus:** Phase 2 - Secrets (Complete)
+**Current focus:** Phase 3 - Core Configs
 
 ## Current Position
 
-Phase: 2 of 5 (Secrets) - COMPLETE
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-01-19 -- Completed 02-02-PLAN.md
+Phase: 3 of 5 (Core Configs)
+Plan: 0 of TBD in current phase
+Status: Ready to plan
+Last activity: 2026-01-18 -- Phase 2 complete
 
 Progress: [████------] 40%
 
