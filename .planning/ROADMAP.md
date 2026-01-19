@@ -78,9 +78,9 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Create package management infrastructure (Brewfile + pacman scripts)
-- [ ] 04-02-PLAN.md — Migrate application configs (nvim, ghostty, htop, gh, kanata)
-- [ ] 04-03-PLAN.md — Configure CLI tools (bat, fd, ripgrep, lazygit, zshrc env vars)
+- [x] 04-01-PLAN.md — Create package management infrastructure (Brewfile + pacman scripts)
+- [x] 04-02-PLAN.md — Migrate application configs (nvim, ghostty, htop, gh, kanata)
+- [x] 04-03-PLAN.md — Configure CLI tools (bat, fd, ripgrep, lazygit, zshrc env vars)
 - [ ] 04-04-PLAN.md — Verification and human approval
 
 ### Phase 5: Bootstrap
@@ -107,7 +107,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 1. Foundation | 1/1 | Complete | 2026-01-18 |
 | 2. Secrets | 2/2 | Complete | 2026-01-19 |
 | 3. Core Configs | 3/3 | Complete | 2026-01-19 |
-| 4. App Ecosystem | 0/4 | Planned | - |
+| 4. App Ecosystem | 3/4 | In progress | - |
 | 5. Bootstrap | 0/TBD | Not started | - |
 
 ---
