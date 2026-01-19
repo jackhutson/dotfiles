@@ -1,0 +1,10 @@
+# Go aliases
+alias gob='go build'
+alias got='go test'
+alias gor='go run'
+alias gom='go mod'
+alias gof='go fmt ./...'
+alias gov='go vet ./...'
+alias goi='go install'
+alias gol='go list ./...'
+alias goc='go clean'
