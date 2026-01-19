@@ -1,0 +1,45 @@
+packages:
+  darwin:
+    taps:
+      - "homebrew/bundle"
+    brews:
+      - bat
+      - chezmoi
+      - eza
+      - fd
+      - fzf
+      - gh
+      - git-delta
+      - go
+      - htop
+      - jq
+      - lazygit
+      - neovim
+      - nvm
+      - ripgrep
+      - starship
+      - zoxide
+      - zsh
+    casks:
+      - 1password-cli
+      - ghostty
+  linux:
+    pacman:
+      - bat
+      - chezmoi
+      - eza
+      - fd
+      - fzf
+      - github-cli
+      - git-delta
+      - go
+      - htop
+      - jq
+      - lazygit
+      - neovim
+      - ripgrep
+      - starship
+      - zoxide
+      - zsh
+    aur:
+      - ghostty
