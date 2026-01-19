@@ -1,0 +1,4 @@
+{{- if eq .chezmoi.os "darwin" }}
+# Homebrew shellenv - sets PATH, HOMEBREW_PREFIX, etc.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{- end }}
