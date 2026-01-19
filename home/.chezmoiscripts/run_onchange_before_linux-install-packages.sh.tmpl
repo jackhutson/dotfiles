@@ -1,0 +1,25 @@
+{{- if and (eq .chezmoi.os "linux") (lookPath "pacman") -}}
+#!/bin/bash
+# Packages hash: {{ include ".chezmoidata/packages.yaml" | sha256sum }}
+# This script runs when packages.yaml changes
+
+set -euo pipefail
+
+echo "Installing pacman packages..."
+
+sudo pacman -S --needed --noconfirm \
+{{ range .packages.linux.pacman }}  {{ . }} \
+{{ end }}
+
+{{ if lookPath "yay" -}}
+echo "Installing AUR packages via yay..."
+yay -S --needed --noconfirm \
+{{ range .packages.linux.aur }}  {{ . }} \
+{{ end }}
+{{ else -}}
+echo "Note: yay not found. Skipping AUR packages."
+echo "Install yay to enable AUR package installation."
+{{ end -}}
+
+echo "Packages installed successfully."
+{{ end -}}
