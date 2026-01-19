@@ -23,18 +23,18 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Shell Configuration
 
-- [ ] **SHELL-01**: zsh config (`.zshrc`, `.zprofile`) managed by chezmoi
-- [ ] **SHELL-02**: oh-my-zsh installed with configured plugins
-- [ ] **SHELL-03**: starship prompt configured and working
-- [ ] **SHELL-04**: Shell aliases and functions included (zoxide, etc.)
-- [ ] **SHELL-05**: `it` tool wrapper included only on work device
+- [x] **SHELL-01**: zsh config (`.zshrc`, `.zprofile`) managed by chezmoi
+- [x] **SHELL-02**: oh-my-zsh installed with configured plugins
+- [x] **SHELL-03**: starship prompt configured and working
+- [x] **SHELL-04**: Shell aliases and functions included (zoxide, etc.)
+- [x] **SHELL-05**: `it` tool wrapper included only on work device
 
 ### Git Configuration
 
-- [ ] **GIT-01**: `.gitconfig` managed with templated user.email
-- [ ] **GIT-02**: Work email on work device, personal email elsewhere
-- [ ] **GIT-03**: 1Password SSH signing configured
-- [ ] **GIT-04**: Standard git settings (rerere, prune, etc.) preserved
+- [x] **GIT-01**: `.gitconfig` managed with templated user.email
+- [x] **GIT-02**: Work email on work device, personal email elsewhere
+- [x] **GIT-03**: 1Password SSH signing configured
+- [x] **GIT-04**: Standard git settings (rerere, prune, etc.) preserved
 
 ### Application Configs
 
@@ -112,15 +112,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SECR-02 | Phase 2 | Complete |
 | SECR-03 | Phase 2 | Complete |
 | SECR-04 | Phase 2 | Complete |
-| SHELL-01 | Phase 3 | Pending |
-| SHELL-02 | Phase 3 | Pending |
-| SHELL-03 | Phase 3 | Pending |
-| SHELL-04 | Phase 3 | Pending |
-| SHELL-05 | Phase 3 | Pending |
-| GIT-01 | Phase 3 | Pending |
-| GIT-02 | Phase 3 | Pending |
-| GIT-03 | Phase 3 | Pending |
-| GIT-04 | Phase 3 | Pending |
+| SHELL-01 | Phase 3 | Complete |
+| SHELL-02 | Phase 3 | Complete |
+| SHELL-03 | Phase 3 | Complete |
+| SHELL-04 | Phase 3 | Complete |
+| SHELL-05 | Phase 3 | Complete |
+| GIT-01 | Phase 3 | Complete |
+| GIT-02 | Phase 3 | Complete |
+| GIT-03 | Phase 3 | Complete |
+| GIT-04 | Phase 3 | Complete |
 | APP-01 | Phase 4 | Pending |
 | APP-02 | Phase 4 | Pending |
 | APP-03 | Phase 4 | Pending |

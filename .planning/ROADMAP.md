@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Core chezmoi infrastructure with device detection
 - [x] **Phase 2: Secrets** - 1Password integration for all sensitive data
-- [ ] **Phase 3: Core Configs** - Shell and Git configuration with templating
+- [x] **Phase 3: Core Configs** - Shell and Git configuration with templating
 - [ ] **Phase 4: App Ecosystem** - Application configs, CLI tools, and package management
 - [ ] **Phase 5: Bootstrap** - Single-command fresh machine setup
 
@@ -61,9 +61,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Create oh-my-zsh external dependencies and templated zshrc
-- [ ] 03-02-PLAN.md — Create static shell configs (starship, zprofile, aliases)
-- [ ] 03-03-PLAN.md — Update .chezmoiignore and add work-only _it completion
+- [x] 03-01-PLAN.md — Create oh-my-zsh external dependencies and templated zshrc
+- [x] 03-02-PLAN.md — Create static shell configs (starship, zprofile, aliases)
+- [x] 03-03-PLAN.md — Update .chezmoiignore and add work-only _it completion
 
 ### Phase 4: App Ecosystem
 **Goal**: Full application configs and package installation for complete dev environment
@@ -103,7 +103,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 1/1 | Complete | 2026-01-18 |
 | 2. Secrets | 2/2 | Complete | 2026-01-19 |
-| 3. Core Configs | 0/3 | Not started | - |
+| 3. Core Configs | 3/3 | Complete | 2026-01-19 |
 | 4. App Ecosystem | 0/TBD | Not started | - |
 | 5. Bootstrap | 0/TBD | Not started | - |
 
