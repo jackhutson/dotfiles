@@ -1,0 +1,15 @@
+# fd global ignore patterns
+# Uses .gitignore syntax
+
+.git/
+node_modules/
+.cache/
+*.pyc
+__pycache__/
+.DS_Store
+.venv/
+vendor/
+dist/
+build/
+.next/
+target/

@@ -1,0 +1,9 @@
+# bat configuration
+# Syntax: one option per line
+
+--theme="Catppuccin Mocha"
+--style="numbers,changes,header"
+--italic-text=always
+--map-syntax "*.conf:INI"
+--map-syntax "*.tmpl:Bash"
+--map-syntax ".chezmoiignore:Git Ignore"

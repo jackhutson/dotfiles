@@ -1,0 +1,10 @@
+# ripgrep configuration
+# Pointed to by RIPGREP_CONFIG_PATH env var
+
+--smart-case
+--hidden
+--glob=!.git/
+--glob=!node_modules/
+--glob=!*.lock
+--glob=!vendor/
+--glob=!.venv/
