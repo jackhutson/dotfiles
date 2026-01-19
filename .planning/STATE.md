@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-18)
 
 **Core value:** Fresh machine -> productive dev environment in minutes, not hours.
-**Current focus:** Phase 3 - Core Configs (COMPLETE)
+**Current focus:** Phase 4 - App Ecosystem (Plan 1 complete)
 
 ## Current Position
 
-Phase: 3 of 5 (Core Configs)
-Plan: 3 of 3 in current phase - COMPLETE
-Status: Phase complete
-Last activity: 2026-01-19 -- Completed 03-03-PLAN.md
+Phase: 4 of 5 (App Ecosystem)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-01-19 -- Completed 04-01-PLAN.md
 
-Progress: [██████----] 60%
+Progress: [███████---] 70%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
-- Average duration: ~2.5 min
-- Total execution time: 6 sessions
+- Total plans completed: 7
+- Average duration: ~2.4 min
+- Total execution time: 7 sessions
 
 **By Phase:**
 
@@ -30,9 +30,10 @@ Progress: [██████----] 60%
 | 1. Foundation | 1 | 1 session | 1 session |
 | 2. Secrets | 2 | 5 min | 2.5 min |
 | 3. Core Configs | 3 | 8 min | 2.7 min |
+| 4. App Ecosystem | 1 | 2 min | 2 min |
 
 **Recent Trend:**
-- Last 6 plans: 6 complete
+- Last 7 plans: 7 complete
 - Trend: Good velocity
 
 *Updated after each plan completion*
@@ -61,6 +62,10 @@ Recent decisions affecting current work:
 - [Phase 3]: Modular alias files by category (git, tools, go, pnpm)
 - [Phase 3]: private_dot_ prefix for 700 permissions on sensitive directories
 - [Phase 3]: Conditional .chezmoiignore with {{ if not .isWork }} for device-specific files
+- [Phase 4]: kanata omitted from packages.yaml (manual install)
+- [Phase 4]: nvm is macOS-only via Homebrew
+- [Phase 4]: brew bundle via heredoc stdin (no Brewfile needed)
+- [Phase 4]: yay conditional (graceful degradation if not installed)
 
 ### Pending Todos
 
@@ -73,7 +78,7 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-19
-Stopped at: Completed 03-03-PLAN.md (Phase 3 complete)
+Stopped at: Completed 04-01-PLAN.md
 Resume file: None
 
 ## Phase Completion Summary
@@ -117,7 +122,20 @@ Resume file: None
 - Conditional .chezmoiignore with {{ if not .isWork }}
 - private_dot_ prefix for restricted permission directories
 
-**Ready for Phase 4:**
-- Shell fully configured (oh-my-zsh + starship + aliases)
-- Work/personal device differentiation working
-- Next phase can add git configs, additional tools, or app configs
+### Phase 4: App Ecosystem - IN PROGRESS
+
+**Plan 1 Delivered:**
+- packages.yaml with darwin (taps/brews/casks) and linux (pacman/aur) sections
+- run_onchange_before_darwin-install-packages.sh.tmpl for macOS Homebrew
+- run_onchange_before_linux-install-packages.sh.tmpl for Arch Linux pacman/yay
+- sha256sum hash pattern for change detection
+
+**Patterns Established:**
+- packages.yaml as single source of truth for all packages
+- run_onchange_before_ prefix for package installation before config apply
+- sha256sum hash triggers re-run on content change
+- Platform-conditional scripts with Arch Linux pacman detection
+
+**Ready for Plan 2:**
+- Package infrastructure complete
+- Can add app configs (Neovim, Ghostty, etc.)
