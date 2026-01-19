@@ -22,5 +22,8 @@
     hostname = {{ .chezmoi.hostname | quote }}
     isWork = {{ eq $deviceType "work" }}
 
+[onepassword]
+    prompt = true
+
 [add]
     secrets = "error"
