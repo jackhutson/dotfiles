@@ -1,0 +1,148 @@
+# ============================================================================
+# Environment Variables
+# ============================================================================
+
+# Zsh file locations (reduce home directory clutter)
+export HISTFILE="$HOME/.cache/zsh/history"
+export ZSH_COMPDUMP="$HOME/.cache/zsh/zcompdump-$ZSH_VERSION"
+export SHELL_SESSIONS_DIR="$HOME/.cache/zsh/sessions"
+
+export ZSH="$HOME/.oh-my-zsh"
+
+# Ensure custom completions are in place before Oh My Zsh runs `compinit`.
+if [ -d "$ZSH/custom/completions" ]; then
+  fpath=("$ZSH/custom/completions" $fpath)
+fi
+
+# Use nvr when inside Neovim terminal, otherwise use nvim
+if [ -n "$NVIM" ]; then
+  export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+  export EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+else
+  export VISUAL="{{ .editor.default }}"
+  export EDITOR="{{ .editor.default }}"
+fi
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# ============================================================================
+# Oh My Zsh Configuration
+# ============================================================================
+
+ZSH_THEME="robbyrussell"
+DISABLE_AUTO_UPDATE="true"
+DISABLE_MAGIC_FUNCTIONS="true"
+
+# Plugins
+plugins=(
+  git
+  aws
+  fzf
+  kubectl
+  docker
+  extract
+  colored-man-pages
+  copypath
+  copyfile
+  web-search
+  zsh-completions
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  you-should-use
+  vi-mode
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# ============================================================================
+# Starship Prompt
+# ============================================================================
+
+eval "$(starship init zsh)"
+
+{{ if .isWork }}
+# ============================================================================
+# Work Tools: crossnokaye/it - AWS profile management
+# ============================================================================
+
+# Prefer the Go-installed binary (typically `~/go/bin/it`) over any old Homebrew path.
+IT_BIN="${GOBIN:-$HOME/go/bin}/it"
+if [ ! -x "$IT_BIN" ] && command -v it >/dev/null 2>&1; then
+  IT_BIN="$(command -v it)"
+fi
+
+it() {
+  if [ "$1" = "env" ] && [ $# -eq 3 ]; then
+    eval "$("$IT_BIN" env "$2" "$3")"
+  else
+    "$IT_BIN" "$@"
+  fi
+}
+
+if [ -f "$HOME/.local/state/crossnokaye/it/env" ]; then
+  export AWS_PROFILE=$(cat "$HOME/.local/state/crossnokaye/it/env")
+fi
+
+# If `it` is a shell function, ensure it still has tab completion wired up.
+if [ -f "$ZSH/custom/completions/_it" ]; then
+  autoload -Uz _it 2>/dev/null || true
+  compdef _it it 2>/dev/null || true
+fi
+
+# Playwright
+export PLAYWRIGHT_USERNAME="jack@crossnokaye.com"
+{{ end }}
+
+# ============================================================================
+# Aliases
+# ============================================================================
+
+# Source modular alias files
+[ -f ~/.config/zsh/aliases-git.zsh ] && source ~/.config/zsh/aliases-git.zsh
+[ -f ~/.config/zsh/aliases-pnpm.zsh ] && source ~/.config/zsh/aliases-pnpm.zsh
+[ -f ~/.config/zsh/aliases-go.zsh ] && source ~/.config/zsh/aliases-go.zsh
+[ -f ~/.config/zsh/aliases-tools.zsh ] && source ~/.config/zsh/aliases-tools.zsh
+
+# Claude CLI
+alias claude="$HOME/.claude/local/claude"
+
+# ============================================================================
+# Tool Initializations
+# ============================================================================
+
+# NVM (Node Version Manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
+[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Zoxide (smarter cd)
+eval "$(zoxide init zsh)"
+
+# 1Password CLI plugins
+[ -f "$HOME/.config/op/plugins.sh" ] && source "$HOME/.config/op/plugins.sh"
+
+# Kiro shell integration
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Go-installed binaries (e.g. `go install ...@latest`)
+if [ -n "${GOBIN:-}" ] && [ -d "$GOBIN" ]; then
+  case ":$PATH:" in (*":$GOBIN:"*) ;; (*) export PATH="$GOBIN:$PATH" ;; esac
+elif [ -d "$HOME/go/bin" ]; then
+  case ":$PATH:" in (*":$HOME/go/bin:"*) ;; (*) export PATH="$HOME/go/bin:$PATH" ;; esac
+fi
+
+# Local bin in PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# Zsh completion configuration
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format '%F{green}%B%d%b%f'
+zstyle ':completion:*' menu select
+
+# Git alias completions
+compdef _git gmm=git-merge
+compdef _git gunc=git-reset
