@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-18)
 
 **Core value:** Fresh machine -> productive dev environment in minutes, not hours.
-**Current focus:** Phase 5 - Finalize (Phase 4 complete)
+**Current focus:** Phase 5 - Bootstrap
 
 ## Current Position
 
-Phase: 4 of 5 (App Ecosystem)
-Plan: 3 of 4 in current phase
-Status: In progress
-Last activity: 2026-01-19 -- Completed 04-03-PLAN.md
+Phase: 4 of 5 (App Ecosystem) - COMPLETE
+Plan: 4 of 4 in current phase
+Status: Phase complete
+Last activity: 2026-01-18 -- Completed Phase 4
 
-Progress: [█████████-] 90%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
-- Average duration: ~2.4 min
-- Total execution time: 8 sessions
+- Total plans completed: 10
+- Average duration: ~2.3 min
+- Total execution time: 9 sessions
 
 **By Phase:**
 
@@ -30,10 +30,10 @@ Progress: [█████████-] 90%
 | 1. Foundation | 1 | 1 session | 1 session |
 | 2. Secrets | 2 | 5 min | 2.5 min |
 | 3. Core Configs | 3 | 8 min | 2.7 min |
-| 4. App Ecosystem | 3 | 5 min | 1.7 min |
+| 4. App Ecosystem | 4 | 8 min | 2.0 min |
 
 **Recent Trend:**
-- Last 9 plans: 9 complete
+- Last 10 plans: 10 complete
 - Trend: Good velocity
 
 *Updated after each plan completion*
@@ -80,8 +80,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-19
-Stopped at: Completed 04-03-PLAN.md
+Last session: 2026-01-18
+Stopped at: Completed Phase 4 (App Ecosystem)
 Resume file: None
 
 ## Phase Completion Summary
@@ -125,7 +125,7 @@ Resume file: None
 - Conditional .chezmoiignore with {{ if not .isWork }}
 - private_dot_ prefix for restricted permission directories
 
-### Phase 4: App Ecosystem - IN PROGRESS (3/4 plans)
+### Phase 4: App Ecosystem - COMPLETE
 
 **Plan 1 Delivered:**
 - packages.yaml with darwin (taps/brews/casks) and linux (pacman/aur) sections
@@ -148,6 +148,11 @@ Resume file: None
 - lazygit config in both OS paths with delta paging
 - zshrc CLI Tool Configuration section (fzf, ripgrep, eza, zoxide env vars)
 
+**Plan 4 Delivered:**
+- Human verification of all Phase 4 functionality
+- Confirmed nvim/LazyVim, CLI tools, app configs all working
+- Phase goal verified (5/5 must-haves)
+
 **Patterns Established:**
 - packages.yaml as single source of truth for all packages
 - run_onchange_before_ prefix for package installation before config apply
@@ -158,5 +163,7 @@ Resume file: None
 - CLI tool configs via static files in dot_config/
 - Dual-path configs for cross-platform tools (lazygit)
 
-**Next:**
-- Plan 04 remaining: Verification and human approval
+**Ready for Phase 5:**
+- Complete dev environment managed by chezmoi
+- Package installation automated
+- All configs portable across devices

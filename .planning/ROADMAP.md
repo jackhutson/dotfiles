@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - Core chezmoi infrastructure with device detection
 - [x] **Phase 2: Secrets** - 1Password integration for all sensitive data
 - [x] **Phase 3: Core Configs** - Shell and Git configuration with templating
-- [ ] **Phase 4: App Ecosystem** - Application configs, CLI tools, and package management
+- [x] **Phase 4: App Ecosystem** - Application configs, CLI tools, and package management
 - [ ] **Phase 5: Bootstrap** - Single-command fresh machine setup
 
 ## Phase Details
@@ -81,7 +81,7 @@ Plans:
 - [x] 04-01-PLAN.md — Create package management infrastructure (Brewfile + pacman scripts)
 - [x] 04-02-PLAN.md — Migrate application configs (nvim, ghostty, htop, gh, kanata)
 - [x] 04-03-PLAN.md — Configure CLI tools (bat, fd, ripgrep, lazygit, zshrc env vars)
-- [ ] 04-04-PLAN.md — Verification and human approval
+- [x] 04-04-PLAN.md — Verification and human approval
 
 ### Phase 5: Bootstrap
 **Goal**: Single-command setup for fresh machines
@@ -107,9 +107,9 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 1. Foundation | 1/1 | Complete | 2026-01-18 |
 | 2. Secrets | 2/2 | Complete | 2026-01-19 |
 | 3. Core Configs | 3/3 | Complete | 2026-01-19 |
-| 4. App Ecosystem | 3/4 | In progress | - |
+| 4. App Ecosystem | 4/4 | Complete | 2026-01-18 |
 | 5. Bootstrap | 0/TBD | Not started | - |
 
 ---
 *Roadmap created: 2026-01-18*
-*Last updated: 2026-01-19*
+*Last updated: 2026-01-18*
