@@ -1,0 +1,15 @@
+{{/* SSH configuration - uses 1Password SSH agent */}}
+
+# Global settings - all hosts use 1Password agent
+Host *
+    # Use 1Password SSH agent for all connections
+    IdentityAgent "~/.1password/agent.sock"
+    # Only use identities from agent, don't try default files
+    IdentitiesOnly yes
+    # Add keys to agent when used
+    AddKeysToAgent yes
+
+# GitHub
+Host github.com
+    HostName github.com
+    User git
