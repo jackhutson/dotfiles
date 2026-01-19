@@ -1,3 +1,13 @@
+# Requirements Archive: v1 MVP
+
+**Archived:** 2026-01-19
+**Status:** ✅ SHIPPED
+
+This is the archived requirements specification for v1.
+For current requirements, see `.planning/PROJECT.md` (requirements are defined per-milestone via `/gsd:new-milestone`).
+
+---
+
 # Requirements: Dotfiles
 
 **Defined:** 2025-01-18
@@ -64,9 +74,9 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **BOOT-03**: Bootstrap installs chezmoi if not present
 - [x] **BOOT-04**: Bootstrap runs `chezmoi init --apply`
 
-## v2 Requirements
+## v2 Requirements (Deferred)
 
-Deferred to future release. Tracked but not in current roadmap.
+Deferred to future release. Tracked but not in v1 roadmap.
 
 ### Enhanced Bootstrap
 
@@ -100,7 +110,7 @@ Explicitly excluded. Documented to prevent scope creep.
 
 ## Traceability
 
-Which phases cover which requirements. Updated during roadmap creation.
+Which phases cover which requirements.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
@@ -140,9 +150,16 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 **Coverage:**
 - v1 requirements: 32 total
-- Mapped to phases: 32
-- Unmapped: 0
+- Shipped: 32
+- Coverage: 100%
 
 ---
-*Requirements defined: 2025-01-18*
-*Last updated: 2026-01-19 after Phase 5 completion*
+
+## Milestone Summary
+
+**Shipped:** 32 of 32 v1 requirements
+**Adjusted:** None — all requirements shipped as specified
+**Dropped:** None
+
+---
+*Archived: 2026-01-19 as part of v1 milestone completion*

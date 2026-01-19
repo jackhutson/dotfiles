@@ -8,47 +8,56 @@ A Chezmoi-managed dotfiles repository that maintains consistent dev environments
 
 Fresh machine → productive dev environment in minutes, not hours.
 
+## Current State (v1 shipped)
+
+**Shipped:** 2026-01-19
+**LOC:** ~1,634 lines of config
+**Stack:** Chezmoi, zsh, oh-my-zsh, starship, nvim/LazyVim, 1Password CLI
+
+v1 delivers the core goal: single-command bootstrap for all 4 device types with full dev environment.
+
 ## Requirements
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Chezmoi manages all dotfiles with device-specific templating — v1
+- ✓ Brewfile handles macOS package installation — v1
+- ✓ Shell script handles Arch/CachyOS package installation — v1
+- ✓ Git config templated for work vs personal email — v1
+- ✓ Kanata config stored but manually installed (macOS only) — v1
+- ✓ 1Password integration for secrets (no secrets in repo) — v1
+- ✓ `it` tool wrapper included only on work device — v1
+- ✓ Bootstrap script detects OS and runs appropriate setup — v1
 
 ### Active
 
-- [ ] Chezmoi manages all dotfiles with device-specific templating
-- [ ] Brewfile handles macOS package installation
-- [ ] Shell script handles Arch/CachyOS package installation
-- [ ] Minimal bootstrap script for Proxmox VMs
-- [ ] Git config templated for work vs personal email
-- [ ] Kanata config stored but manually installed (macOS only)
-- [ ] 1Password integration for secrets (no secrets in repo)
-- [ ] `it` tool wrapper included only on work device
-- [ ] Bootstrap script detects OS and runs appropriate setup
+(None — v1 complete, define new requirements for v1.1)
 
 ### Out of Scope
 
 - Zed config — just testing, not primary editor
 - Helix config — just testing, not primary editor
 - Nix/Home Manager — deferred, may revisit later
-- Full setup for Proxmox VMs — minimal only
+- Full setup for Proxmox VMs — minimal only (v2 consideration)
 - GUI app management beyond Brewfile casks
 - Automatic kanata installation — manual only
 
 ## Context
 
-**Existing configs to migrate:**
-- nvim: LazyVim + custom lua/after at ~/.config/nvim/
-- zsh: oh-my-zsh + plugins at ~/.zshrc, ~/.zprofile
-- starship: Custom prompt at ~/.config/starship.toml
-- ghostty: ~/.config/ghostty/config
-- git: ~/.gitconfig (1Password SSH signing)
-- gh: ~/.config/gh/
-- kanata: ~/.config/kanata/kanata.kbd
-- htop: ~/.config/htop/
+**Migrated configs (v1):**
+- nvim: LazyVim + 13 custom plugins
+- zsh: oh-my-zsh + 4 custom plugins (syntax-highlighting, autosuggestions, you-should-use, completions)
+- starship: Catppuccin Mocha theme prompt
+- ghostty: Catppuccin Mocha terminal config
+- git: Templated email + 1Password SSH signing
+- gh: CLI config with nvim editor
+- kanata: Home row mods + nav/symbol layers (macOS only)
+- htop: Custom layout
+- CLI tools: bat, fd, ripgrep, lazygit, fzf, eza, zoxide
 
-**CLI tools (via Homebrew):**
-bat, bottom, eza, fd, fzf, jq, k9s, lazygit, ripgrep, zoxide, go, helm, kind, httpie, awscli
+**CLI tools managed (via packages.yaml):**
+macOS: bat, bottom, eza, fd, fzf, jq, k9s, lazygit, ripgrep, zoxide, go, helm, kind, httpie, awscli, starship, oven-sh/bun/bun
+Linux: bat, bottom, eza, fd, fzf, jq, k9s, lazygit, ripgrep, zoxide, go, starship, neovim
 
 **Device matrix:**
 | Device | OS | Git Email | Kanata | it tool | Setup Level |
@@ -69,10 +78,13 @@ bat, bottom, eza, fd, fzf, jq, k9s, lazygit, ripgrep, zoxide, go, helm, kind, ht
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Chezmoi over Nix | Simpler to start, LLM-friendly, can migrate to Nix later | — Pending |
-| 1Password for secrets | Already in use, good CLI integration | — Pending |
-| Minimal Proxmox setup | VMs are ephemeral, full setup overkill | — Pending |
-| Kanata manual install | Only needed on macbooks, opt-in reduces complexity | — Pending |
+| Chezmoi over Nix | Simpler to start, LLM-friendly, can migrate to Nix later | ✓ Good — achieved goal in 2 days |
+| 1Password for secrets | Already in use, good CLI integration | ✓ Good — verification script catches misconfigs |
+| Minimal Proxmox setup | VMs are ephemeral, full setup overkill | — Pending (deferred to v2) |
+| Kanata manual install | Only needed on macbooks, opt-in reduces complexity | ✓ Good — config stored, install manual |
+| Y/n prompt over choice menu | User feedback: choice menu auto-selects on partial match | ✓ Good — explicit Y/n clearer |
+| Archive type for oh-my-zsh | Avoid conflicts with oh-my-zsh auto-update | ✓ Good — chezmoi controls updates |
+| run_after verification script | Surface 1Password misconfigs on every apply | ✓ Good — catches issues early |
 
 ---
-*Last updated: 2025-01-18 after initialization*
+*Last updated: 2026-01-19 after v1 milestone*
