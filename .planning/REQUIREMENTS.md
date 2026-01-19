@@ -59,10 +59,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Bootstrap
 
-- [ ] **BOOT-01**: Single command bootstrap (`curl | sh` or similar)
-- [ ] **BOOT-02**: Bootstrap detects OS (macOS vs Linux)
-- [ ] **BOOT-03**: Bootstrap installs chezmoi if not present
-- [ ] **BOOT-04**: Bootstrap runs `chezmoi init --apply`
+- [x] **BOOT-01**: Single command bootstrap (`curl | sh` or similar)
+- [x] **BOOT-02**: Bootstrap detects OS (macOS vs Linux)
+- [x] **BOOT-03**: Bootstrap installs chezmoi if not present
+- [x] **BOOT-04**: Bootstrap runs `chezmoi init --apply`
 
 ## v2 Requirements
 
@@ -133,10 +133,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PKG-02 | Phase 4 | Complete |
 | PKG-03 | Phase 4 | Complete |
 | PKG-04 | Phase 4 | Complete |
-| BOOT-01 | Phase 5 | Pending |
-| BOOT-02 | Phase 5 | Pending |
-| BOOT-03 | Phase 5 | Pending |
-| BOOT-04 | Phase 5 | Pending |
+| BOOT-01 | Phase 5 | Complete |
+| BOOT-02 | Phase 5 | Complete |
+| BOOT-03 | Phase 5 | Complete |
+| BOOT-04 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 32 total
@@ -145,4 +145,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2025-01-18*
-*Last updated: 2026-01-18 after Phase 4 completion*
+*Last updated: 2026-01-19 after Phase 5 completion*
