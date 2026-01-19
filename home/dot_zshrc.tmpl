@@ -30,6 +30,30 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # ============================================================================
+# CLI Tool Configuration
+# ============================================================================
+
+# fzf - fuzzy finder defaults
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+export FZF_DEFAULT_OPTS='
+  --height 40%
+  --layout=reverse
+  --border
+  --info=inline
+'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
+
+# ripgrep - point to config file
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/config"
+
+# eza - enable icons by default
+export EZA_ICONS_AUTO=1
+
+# zoxide - echo directory after cd
+export _ZO_ECHO=1
+
+# ============================================================================
 # Oh My Zsh Configuration
 # ============================================================================
 
