@@ -1,0 +1,42 @@
+{{/* .gitconfig - Git configuration with 1Password signing */}}
+
+[user]
+    name = {{ .git.name | quote }}
+    email = {{ .email | quote }}
+    # SSH public key for signing - retrieved from 1Password
+    # NOTE: Update the op:// path to match your actual 1Password item
+    signingkey = {{ onepasswordRead "op://Personal/GitHub SSH Key/public key" | quote }}
+
+[init]
+    defaultBranch = {{ .git.defaultBranch | quote }}
+
+[commit]
+    gpgsign = true
+
+[tag]
+    gpgsign = true
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+{{ if eq .chezmoi.os "darwin" -}}
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+{{ else -}}
+    program = "/opt/1Password/op-ssh-sign"
+{{ end -}}
+
+[core]
+    editor = {{ .editor.default | quote }}
+
+[pull]
+    rebase = false
+
+[push]
+    autoSetupRemote = true
+
+[rerere]
+    enabled = true
+
+[fetch]
+    prune = true
