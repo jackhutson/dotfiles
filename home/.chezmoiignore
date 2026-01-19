@@ -36,3 +36,19 @@ Brewfile
 {{ if ne .deviceType "personal" }}
 .config/personal-apps/
 {{ end }}
+
+# nvim runtime artifacts - never managed
+.config/nvim/lazy-lock.json
+.config/nvim/.nvimlog
+.config/nvim/.luarc.json
+
+# gh CLI secrets - never managed
+.config/gh/hosts.yml
+
+# Lazygit: macOS uses Library path, Linux uses .config
+{{ if ne .chezmoi.os "darwin" }}
+Library/Application Support/lazygit/
+{{ end }}
+{{ if ne .chezmoi.os "linux" }}
+.config/lazygit/
+{{ end }}
