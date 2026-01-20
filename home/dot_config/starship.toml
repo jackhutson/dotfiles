@@ -1,7 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](red)\
+[](red)\
 $os\
 $username\
 [](bg:peach fg:red)\
@@ -24,7 +24,7 @@ $conda\
 $env_var\
 [](fg:sapphire bg:lavender)\
 $time\
-[ ](fg:lavender)\
+[](fg:lavender)\
 $cmd_duration\
 $line_break\
 $character"""
