@@ -1,7 +1,6 @@
 packages:
   darwin:
-    taps:
-      - "homebrew/bundle"
+    taps: []  # homebrew/bundle is deprecated and now built-in
     brews:
       - bat
       - chezmoi

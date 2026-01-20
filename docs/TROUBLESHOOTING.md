@@ -46,6 +46,25 @@ Issues encountered when applying dotfiles on different machines.
    ```
 4. Update the `op://` path in `home/private_dot_gitconfig.tmpl` if needed
 
+### Multiple 1Password accounts error
+
+**Symptom:** Error like `multiple accounts found. Use the --account flag or set the OP_ACCOUNT environment variable`
+
+**Fixes:**
+1. List your accounts: `op account list`
+2. Identify which account has your `Private` vault (usually personal account)
+3. Set the account before running chezmoi:
+   ```bash
+   export OP_ACCOUNT=my.1password.com  # Replace with your account URL
+   chezmoi apply
+   ```
+4. Or add to your chezmoi config (`~/.config/chezmoi/chezmoi.toml`):
+   ```toml
+   [onepassword]
+       command = "op"
+       args = ["--account", "my.1password.com"]
+   ```
+
 ### op-ssh-sign binary not found
 
 **Symptom:** Verification shows "op-ssh-sign binary: FAIL"
@@ -65,11 +84,62 @@ Issues encountered when applying dotfiles on different machines.
    - macOS: `/Applications/1Password.app/Contents/MacOS/op-ssh-sign`
    - Linux: `/opt/1Password/op-ssh-sign`
 
+## Chezmoi Issues
+
+### Chezmoi using wrong source directory
+
+**Symptom:** Changes to `~/.dotfiles` not being applied, or old configs being used
+
+**Diagnosis:**
+```bash
+chezmoi source-path
+# Should output: /Users/yourusername/.dotfiles/home
+```
+
+**Fixes:**
+1. Check for old chezmoi source at `~/.local/share/chezmoi/`:
+   ```bash
+   ls -la ~/.local/share/chezmoi/
+   ```
+2. If it exists and is outdated, back it up and remove:
+   ```bash
+   mv ~/.local/share/chezmoi ~/.local/share/chezmoi.bak
+   ```
+3. Update chezmoi config to use correct source:
+   ```bash
+   # Add to ~/.config/chezmoi/chezmoi.toml:
+   sourceDir = "/Users/yourusername/.dotfiles"
+   ```
+
+### Config file template warning
+
+**Symptom:** `warning: config file template has changed, run chezmoi init to regenerate config file`
+
+**Explanation:** This warning appears when the `.chezmoi.toml.tmpl` template in the source differs from your generated `~/.config/chezmoi/chezmoi.toml`. It's usually harmless if your config is already correct.
+
+**Fixes:**
+1. If you want to regenerate config (will prompt for device type again):
+   ```bash
+   chezmoi init --source ~/.dotfiles
+   ```
+2. Or ignore the warning if your current config is correct.
+
+### Inconsistent state with external archives
+
+**Symptom:** Error about "inconsistent state" with oh-my-zsh or other externally managed directories
+
+**Explanation:** Chezmoi doesn't allow both local source files and external archives for the same path.
+
+**Fixes:**
+1. Move local custom files to a different location (e.g., `~/.config/zsh/completions/`)
+2. Update your shell config to include the new path in `fpath`
+3. Remove the conflicting local source directory from the chezmoi source
+
 ## Platform-Specific Issues
 
 ### macOS
 
-- 1Password agent socket: `~/.1password/agent.sock`
+- 1Password agent socket: `~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock`
 - op-ssh-sign: `/Applications/1Password.app/Contents/MacOS/op-ssh-sign`
 
 ### Linux (including CachyOS)

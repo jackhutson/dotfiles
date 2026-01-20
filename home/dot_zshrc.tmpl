@@ -13,8 +13,12 @@ export SHELL_SESSIONS_DIR="$HOME/.cache/zsh/sessions"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Ensure custom completions are in place before Oh My Zsh runs `compinit`.
+# Check both oh-my-zsh custom and XDG-style locations
 if [ -d "$ZSH/custom/completions" ]; then
   fpath=("$ZSH/custom/completions" $fpath)
+fi
+if [ -d "$HOME/.config/zsh/completions" ]; then
+  fpath=("$HOME/.config/zsh/completions" $fpath)
 fi
 
 # Use nvr when inside Neovim terminal, otherwise use nvim
