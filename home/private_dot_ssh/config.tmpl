@@ -3,7 +3,11 @@
 # Global settings - all hosts use 1Password agent
 Host *
     # Use 1Password SSH agent for all connections
+{{- if eq .chezmoi.os "darwin" }}
     IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+{{- else }}
+    IdentityAgent "~/.1password/agent.sock"
+{{- end }}
 
 # GitHub
 Host github.com

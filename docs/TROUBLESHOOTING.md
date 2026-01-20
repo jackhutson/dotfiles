@@ -157,11 +157,13 @@ chezmoi source-path
 ## Verification Commands
 
 ```bash
-# Check SSH agent
-ssh-add -l
-
-# Check GitHub auth
+# Quick test (uses SSH config IdentityAgent)
 ssh -T git@github.com
+
+# Check SSH agent keys (requires SSH_AUTH_SOCK to be set)
+ssh-add -l
+# If this returns "no identities" but GitHub works, restart your terminal
+# or run: source ~/.zshrc
 
 # Check Git signing config
 git config --global --get gpg.format
